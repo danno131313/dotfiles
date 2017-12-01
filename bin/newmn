@@ -1,1 +1,12 @@
-/home/danno131313/bin/newmn
+#!/bin/bash
+
+mkdir $1 && cd $1
+
+mkdir client
+mkdir views
+
+npm init -y
+
+npm install express body-parser mongoose express-session path ejs --save
+
+cat "/home/danno131313/bin/mean-helper/server.js" > server.js

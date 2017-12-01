@@ -1,1 +1,2 @@
-../.fehbg
+#!/bin/sh
+'feh' '--bg-scale' '/home/danno131313/Pictures/Backgrounds/space.jpg' 

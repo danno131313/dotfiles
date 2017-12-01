@@ -1,1 +1,6 @@
-/home/danno131313/bin/battmonitor
+#!/bin/bash
+
+if [ $(cat /sys/class/power_supply/BAT1/capacity) < 15 ]
+then
+    xbacklight -set 15
+fi
