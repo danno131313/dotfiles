@@ -1,6 +1,35 @@
 #!/bin/bash
 
-if [ $(cat /sys/class/power_supply/BAT1/capacity) < 15 ]
+typeset -i capacity=$(cat /sys/class/power_supply/BAT1/capacity)
+typeset -i backlight_raw=$(printf "%.0f" "$(cat /sys/class/backlight/intel_backlight/brightness)")
+backlight=$(( $backlight_raw * 100 / 7500 ))
+battmonitor="$(cat /home/danno131313/bin/battmonitorstatus)"
+echo "Capacity: $capacity"
+echo "Backlight: $backlight"
+echo "Batt monitor: $battmonitor"
+
+if (( $capacity < 15 )) && [ $battmonitor = "on" ] && (( $backlight > 15 ))
 then
-    xbacklight -set 15
+    echo done
+elif (( $capacity > 15 )) && [ $backlight -eq 15 ]
+then
+    echo 4500 > /sys/class/backlight/intel_backlight/brightness
+elif (( $capacity > 15 ))
+then
+    echo "off" > /home/danno131313/bin/battmonitorstatus
+else
+    on_ac_power
+    ac=$(echo $?)
+
+    if [ "$ac" = "0" ]
+    then
+        xbacklight -set 60
+    fi
+
+    if (( $capacity < 15 ))
+    then
+        echo "on" > /home/danno131313/bin/battmonitorstatus
+        xbacklight -set 15
+    fi
 fi
+exit 0

@@ -3,9 +3,11 @@ promptinit
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
-setopt COMPLETE_ALIASES
-setopt HIST_IGNORE_DUPS
-export HISTFILE=~/.zhistory
+setopt COMPLETE_ALIASES INC_APPEND_HISTORY SHARE_HISTORY
+export SAVEHIST=10000
+export HISTFILE=/home/danno131313/.zhistory
+export HISTCONTROL=ignoreboth
+export HISTSIZE=10000
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
@@ -22,7 +24,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-export GPGKEY=4ABCE436F2FC3F73C380E2C9B72EA21797C052B0
+export GPGKEY=48DE4CF802A32DE58722730720038E3E1967FBF7
 source ~/bin/zsh-syntax-highlighting-master/zsh-syntax-highlighting.zsh
 
 # start ssh-agent
