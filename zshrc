@@ -4,10 +4,10 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES INC_APPEND_HISTORY SHARE_HISTORY
-export SAVEHIST=10000
+export SAVEHIST=1000
 export HISTFILE=/home/danno131313/.zhistory
 export HISTCONTROL=ignoreboth
-export HISTSIZE=10000
+export HISTSIZE=1000
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search

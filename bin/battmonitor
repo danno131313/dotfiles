@@ -8,7 +8,9 @@ echo "Capacity: $capacity"
 echo "Backlight: $backlight"
 echo "Batt monitor: $battmonitor"
 
-if (( $capacity < 15 )) && [ $battmonitor = "on" ] && (( $backlight > 15 ))
+if (( $capacity < 2 )); then
+    poweroff
+elif (( $capacity < 15 )) && [ $battmonitor = "on" ] && (( $backlight > 15 ))
 then
     echo done
 elif (( $capacity > 15 )) && [ $backlight -eq 15 ]

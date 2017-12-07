@@ -6,7 +6,7 @@ mkdir client controllers models config
 
 npm init -y
 
-npm install express body-parser mongoose express-session path ejs --save
+npm install express body-parser mongoose express-session path --save
 
 cat "/home/danno131313/bin/mean-helper/server.js" > server.js
 cat "/home/danno131313/bin/mean-helper/routes.js" > ./config/routes.js
