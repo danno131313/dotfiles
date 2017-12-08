@@ -1,8 +1,6 @@
 #!/bin/bash
 
-BOILERPLATE_DIR=/home/danno131313/bin/mean-helper
-
-###############################################
+BOILERPLATE_DIR=./boilerplate
 
 if [ "$#" != "2" ]; then
     echo "Not enough arguments!"
