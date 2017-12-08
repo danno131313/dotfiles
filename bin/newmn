@@ -2,6 +2,14 @@
 
 BOILERPLATE_DIR=/home/danno131313/bin/mean-helper
 
+###############################################
+
+if [ "$#" != "2" ]; then
+    echo "Not enough arguments!"
+    echo "Usage: newmn {{project_name}} {{db_name}}"
+    exit 1
+fi
+
 mkdir $1 && cd $1
 
 mkdir -p server/config server/controllers server/models
@@ -10,10 +18,10 @@ npm init -y
 
 npm install express body-parser mongoose express-session path --save
 
-cat "$BOILDERPLATE_DIR/server.js" > server.js
-cat "$BOILDERPLATE_DIR/routes.js" > ./server/config/routes.js
-~/bin/mean-helper/mongoose ./server/config/mongoose.js $2
-cat "$BOILDERPLATE_DIR/controller.js" > ./server/controllers/home.js
+cat "$BOILERPLATE_DIR/server.js" > server.js
+cat "$BOILERPLATE_DIR/routes.js" > ./server/config/routes.js
+$BOILERPLATE_DIR/mongoose ./server/config/mongoose.js $2
+cat "$BOILERPLATE_DIR/controller.js" > ./server/controllers/home.js
 
 ng new client --routing
 
@@ -22,11 +30,11 @@ cd client/src/app
 ng g component home
 ng g service app
 
-cat "$BOILDERPLATE_DIR/app.module.ts" > app.module.ts
+cat "$BOILERPLATE_DIR/app.module.ts" > app.module.ts
 
-cat "$BOILDERPLATE_DIR/home.component.ts" > ./home/home.controller.ts
+cat "$BOILERPLATE_DIR/home.component.ts" > ./home/home.controller.ts
 
-cat "$BOILDERPLATE_DIR/app.service.ts" > app.service.ts
+cat "$BOILERPLATE_DIR/app.service.ts" > app.service.ts
 
-cat "$BOILDERPLATE_DIR/app.component.html" > app.component.html
-cat "$BOILDERPLATE_DIR/app-routing.module.ts" > app-routing.module.ts
+cat "$BOILERPLATE_DIR/app.component.html" > app.component.html
+cat "$BOILERPLATE_DIR/app-routing.module.ts" > app-routing.module.ts
