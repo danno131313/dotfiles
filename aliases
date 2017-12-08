@@ -50,7 +50,7 @@ alias eclipse='SWT_GTK3=0 eclipse </dev/null &>/dev/null &'
 alias spring='SWT_GTK3=0 ~/Documents/sts-3.9.1.RELEASE/STS'
 alias em='emacsclient -nc -s instance1'
 alias ~='cd ~'
-alias mn='cd ~/DojoAssignments/MEAN/'
+alias mn='cd ~/DojoAssignments/MEAN/MEAN'
 function newdj() { ~/bin/django_helper/django-project $1 $2 && cd ~/DojoAssignments/Python/Django/$1;}
 function newdjapp() { ~/bin/django_helper/django-app $1 && cd ./$1;}
 function mkusb() { sudo dd bs=4M if=$1 of=$2 && sync; }

@@ -1,8 +1,7 @@
-const controller = require("../controllers/controller");
+const home = require("../controllers/home");
+
 module.exports = (app) => {
-
-    app.get("/", (req, res) => {
-        controller.index(req, res);
+    app.get("/test", (req, res) => {
+        home.index(req, res);
     });
-
 }

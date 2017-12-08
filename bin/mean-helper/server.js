@@ -6,7 +6,7 @@ const session  = require("express-session");
 const mongoose = require("mongoose");
 const port     = 8000;
 
-app.use(express.static(path.join(__dirname, "./client")));
+app.use(express.static(path.join(__dirname, "./client/dist")));
 app.use(bp.json());
 app.use(session({
     secret: "lolololololol secrets",
@@ -14,8 +14,8 @@ app.use(session({
     resave: false,
 }));
 
-require("./config/mongoose");
-require("./config/routes")(app);
+require("./server/config/mongoose");
+require("./server/config/routes")(app);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

@@ -1,9 +1,11 @@
+#!/bin/bash
+cat > $1 <<EOF
 const mongoose = require("mongoose");
 const path     = require("path");
 const fs       = require("fs");
 const mp       = path.join(__dirname, "../models");
 
-mongoose.connect("mongodb://localhost/{{ DB_NAME }}");
+mongoose.connect("mongodb://localhost/$2");
 mongoose.Promise = global.Promise;
 
 fs.readdirSync(mp).forEach(function(file) {
@@ -11,3 +13,4 @@ fs.readdirSync(mp).forEach(function(file) {
         require(mp + "/" + file);
     }
 });
+EOF
