@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BOILERPLATE_DIR=./boilerplate
+BOILERPLATE_DIR=/home/danno131313/bin/boilerplate
 
 if [ "$#" != "2" ]; then
     echo "Not enough arguments!"
@@ -30,7 +30,7 @@ ng g service app
 
 cat "$BOILERPLATE_DIR/app.module.ts" > app.module.ts
 
-cat "$BOILERPLATE_DIR/home.component.ts" > ./home/home.controller.ts
+cat "$BOILERPLATE_DIR/home.component.ts" > ./home/home.component.ts
 
 cat "$BOILERPLATE_DIR/app.service.ts" > app.service.ts
 

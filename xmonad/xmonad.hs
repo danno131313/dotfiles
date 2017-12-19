@@ -22,7 +22,7 @@ main = do
         `additionalKeys` myKeys
 
 myKeys = [
-          ((mod1Mask, xK_c), spawn "firefox-developer")
+          ((mod1Mask, xK_c), spawn "firefox-developer-edition")
          ,((mod1Mask, xK_d), spawn "j4-dmenu-desktop")
          ,((mod1Mask .|. shiftMask, xK_p), spawn "shutdown now")
          ,((mod1Mask, xK_p), spawn "reboot")
